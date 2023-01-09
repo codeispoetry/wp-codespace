@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Blueprint" xsi:noNamespaceSchemaLocation="phpcs.xsd">
+    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
+
+    <rule ref="WordPress">
+        <exclude name="Generic.Files.LineEndings"/>
+    </rule>
+    <config name="testVersion" value="5.6-"/>
+    <rule ref="PHPCompatibilityWP"/>
+</ruleset>

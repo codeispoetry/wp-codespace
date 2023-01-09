@@ -1,0 +1,19 @@
+{
+  "name": "wordpress6-dev-esst-782160-cs",
+  "version": "1.0.0",
+  "description": "Dies ist das Repository für den **LinkedIn Learning** Kurs `[COURSENAME]`. Den gesamten Kurs finden Sie auf [LinkedIn Learning][lil-course-url].",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinkedInLearning/wordpress6-dev-esst-782160-cs.git"
+  },
+  "author": "Thomas Rose",
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^13.5.0",
+    "eslint": "^8.27.0"
+  },
+  "dependencies": {
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  }
+}
