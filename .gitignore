@@ -9,12 +9,8 @@ htdocs/*
 htdocs/wp-content/*
 !htdocs/wp-content/plugins
 htdocs/wp-content/plugins/*
-!htdocs/wp-content/plugins/my-first-plugin
-!htdocs/wp-content/plugins/rosegarden
-!htdocs/favicon.ico
+!htdocs/wp-content/plugins/wp-codespace
 
 !htdocs/wp-content/themes
 htdocs/wp-content/themes/*
 !htdocs/wp-content/themes/rosegarden
-!htdocs/wp-content/themes/rosegarden21
-!htdocs/wp-content/themes/rosegarden-minimal
