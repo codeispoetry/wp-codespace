@@ -1,7 +1,8 @@
 #! /bin/bash
 echo "Installing depedencies"
 npm install 
-composer install 
+composer install
+npx playwright install-deps  
 
 echo "Configuring xdebug"
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini

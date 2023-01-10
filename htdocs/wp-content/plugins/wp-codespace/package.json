@@ -1,0 +1,17 @@
+{
+  "name": "wp-codespace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project=chromium",
+    "compile:css": "node-sass build/sass/styles.scss > styles.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.29.2",
+    "node-sass": "^8.0.0"
+  }
+}
