@@ -18,19 +18,3 @@ wp-configure:
 	docker-compose exec --user www-data wordpress wp language core install de_DE --activate
 	docker-compose exec --user www-data wordpress wp plugin delete akismet
 	docker-compose exec --user www-data wordpress wp plugin install show-current-template --activate
-
-cli:
-	docker run -it --rm \
-    --volumes-from wp6-training \
-    --network container:wp6-training \
-    -e WORDPRESS_DB_USER=wordpress \
-    -e WORDPRESS_DB_PASSWORD=wordpress \
-    -e WORDPRESS_DB_HOST=db \
-    wordpress:cli bash
-
-node:
-	docker run -it --rm \
-    --volumes-from wp6-training \
-    --network container:wp6-training \
-    --workdir /var/www/html/wp-content/plugins/rosegarden \
-    node:19 bash
