@@ -1,12 +1,14 @@
-# WordPress in a Codespace
+# WordPress Codespace Dev Environment
 
-This is a sample configuration for a development environment for WordPress in a GitGub [Codepsace](https://github.com/features/codespaces).
+This is a starter kit for a development environment for WordPress in a GitGub [Codepsace](https://github.com/features/codespaces).
 Start developing for WordPress right after a single click.
 
 ## Usage
-Just create your own codespace by clicking this button. Please allow 5 minutes at first setup. 
+Create your own codespace by clicking this button. Please allow 5 minutes for auto-configuration at first setup. 
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)
+
+Try the example plugin in _plugins/wp-codespace_, make some changes and appreciate the advantages of a pre-configured codespace.
 
 ## Behind the scenes
 After the codespace is up and running, the _postCreateCommand_ will be executed, including:
@@ -29,4 +31,4 @@ A codespace is a convenient way to contribute to an Open Source project, as you 
 
 Just type, test and refactor your WordPress code. No need for DevOps.
 
-Giv it a try and [create your personal codespace on main right now]((https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)).
+Giv it a try and [create your personal codespace on main](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope) right now.
