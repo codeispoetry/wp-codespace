@@ -6,8 +6,7 @@
   "author": "Thomas Rose",
   "devDependencies": {
     "@wordpress/eslint-plugin": "^13.5.0",
-    "eslint": "^8.27.0",
-    "@playwright/test": "^1.29.2"
+    "eslint": "^8.27.0"
   },
   "dependencies": {
     "prettier": "^2.7.1",
