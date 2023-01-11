@@ -15,7 +15,8 @@ docker-compose up -d
 file="htdocs/wp-config.php"
 while test ! -f "$file"
 do
-  sleep 1
+  echo "Look for wp-config"
+  sleep 10
 done
 
 sudo chmod 777 htdocs/ -R 
@@ -23,11 +24,12 @@ make update-wp-config
 
 # retry until database is up and running
 while true; do
-    make wp-install
-    if [ $? -eq 0 ]; then
-        break
-    fi
-    sleep 15
+  echo "try to make wp-install"
+  make wp-install
+  if [ $? -eq 0 ]; then
+      break
+  fi
+  sleep 15
 done
 
 make wp-configure
