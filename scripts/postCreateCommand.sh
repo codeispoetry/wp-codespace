@@ -3,6 +3,8 @@ echo "Installing depedencies"
 npm install 
 composer install
 yes | npx playwright install-deps  
+npx playwright install 
+cd htdocs/wp-content/plugins/wp-codespace && npm install
 
 echo "Configuring xdebug"
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
