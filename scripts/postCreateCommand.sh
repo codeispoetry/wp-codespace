@@ -1,4 +1,6 @@
 #! /bin/bash
+
+exit; 
 echo "Installing depedencies"
 npm install 
 composer install
