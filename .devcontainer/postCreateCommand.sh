@@ -1,5 +1,7 @@
 #! /bin/bash
-
+LINE_NUMBER=`grep -n -o 'stop editing!' wordpress/wp-config.php | cut -d ':' -f 1`
+sed -i "${LINE_NUMBER}r .devcontainer/wp-config-addendum.txt" wordpress/wp-config.php && sed -i -e "s/CODESPACE_NAME/$CODESPACE_NAME/g"  wordpress/wp-config.php
+exit
 # Apache
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
 sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
@@ -12,8 +14,8 @@ wp core download --locale=de_DE --path=wordpress
 cd wordpress
 wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=db
 
-LINE_NUMBER=`grep -n -o 'stop editing!' wordpress/wp-config.php | cut -d ':' -f 1`
-sed -i "${LINE_NUMBER}r .devcontainer/wp-config-addendum.txt" wordpress/wp-config.php && sed -i -e "s/CODESPACE_NAME/$CODESPACE_NAME/g"  wordpress/wp-config.php
+LINE_NUMBER=`grep -n -o 'stop editing!' wp-config.php | cut -d ':' -f 1`
+sed -i "${LINE_NUMBER}r ../.devcontainer/wp-config-addendum.txt" wp-config.php && sed -i -e "s/CODESPACE_NAME/$CODESPACE_NAME/g"  wp-config.php
 
 wp core install --url=https://$(CODESPACE_NAME) --title=WordPress --admin_user=admin --admin_password=admin --admin_email=mail@example.com --locale=de_DE
 wp language core install de_DE --activate
