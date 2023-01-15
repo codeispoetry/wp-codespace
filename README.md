@@ -6,7 +6,7 @@ Start developing for WordPress right after a single click.
 ## Usage
 Create your own codespace by clicking this button. Please allow 5 minutes for auto-configuration at first setup. 
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)
 
 Try the example plugin in _plugins/wp-codespace_, make some changes and appreciate the advantages of a pre-configured codespace.
 
@@ -32,4 +32,4 @@ A codespace is a convenient way to contribute to an Open Source project, as you 
 
 Just type, test and refactor your WordPress code. No need for DevOps.
 
-Giv it a try and [create your personal codespace on main](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope) right now.
+Giv it a try and [create your personal codespace on main](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope) right now.
