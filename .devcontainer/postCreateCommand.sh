@@ -24,16 +24,18 @@ cd ..
 #Xdebug
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
+# Setup bash
+echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
+echo export PS1=\"$ \" >> ~/.bashrc
+source ~/.bashrc
+
+exit
+
 # install dependencies
 npm install 
 composer install
 yes | npx playwright install-deps  
 npx playwright install 
-
-# Setup bash
-echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
-echo export PS1=\"$ \" >> ~/.bashrc
-source ~/.bashrc
 
 # Setup local plugin
 exit
