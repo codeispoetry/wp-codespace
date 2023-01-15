@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: unless-stopped
     volumes:
       - ../..:/workspaces:cached
     # Overrides default command so things don't shut down after the process ends.
@@ -22,7 +23,7 @@ services:
       MYSQL_PASSWORD: wordpress
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin
     depends_on:
       - db
     ports:
