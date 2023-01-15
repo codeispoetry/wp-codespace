@@ -43,10 +43,8 @@
 		"81": {
 			"label": "phpMyAmdin"
 		}
-	}
-
+	},
+	"postStartCommand": "service apache2 start"
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
-
-	//"postStartCommand": ""
 }

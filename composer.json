@@ -1,12 +1,12 @@
 {
-    "name": "codeispoetry/wp-environment",
-    "description": "Local environment for developing WordPress",
+    "name": "codeispoetry/wp-codepsace",
+    "description": "codespace for developing WordPress",
     "extra": {
         "installer-paths": {
-          "htdocs/wp-content/plugins/{$name}/": [
+          "wordpress/wp-content/plugins/{$name}/": [
             "type:wordpress-plugin"
           ],
-          "htdocs/wp-content/themes/{$name}/": [
+          "wordpress/wp-content/themes/{$name}/": [
             "type:wordpress-theme"
           ]
         }

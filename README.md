@@ -39,6 +39,9 @@ Open the terminal and switch to the directory _wordpress/wp-content/plugins/wp-c
 - change the color in the file _build/sass/styles.scss_
 - run `npm run compile:css` to compile _styles.css_
 
+### Custom demo content
+This repo fills WordPress with demo content from the [WordPress Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test). In your fork, you can place a *.xml-file and import this data on the command line. See _.devcontainer/postCreateCommand.sh_ under the section _"Demo content for WordPress"_ for more details.
+
 ## Behind the scenes
 This setup will install and configure the following things automatically:
 - install WordPress with credentials admin/admin
