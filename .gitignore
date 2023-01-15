@@ -4,6 +4,8 @@ vendor
 .tmp
 npm-debug.log
 .devcontainer/postCreateCommand.log
+package-lock.json
+composer.lock
 
 wordpress/*
 !wordpress/wp-content

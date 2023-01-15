@@ -1,7 +1,5 @@
 #! /bin/bash
-LINE_NUMBER=`grep -n -o 'stop editing!' wordpress/wp-config.php | cut -d ':' -f 1`
-sed -i "${LINE_NUMBER}r .devcontainer/wp-config-addendum.txt" wordpress/wp-config.php && sed -i -e "s/CODESPACE_NAME/$CODESPACE_NAME/g"  wordpress/wp-config.php
-exit
+
 # Apache
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
 sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
