@@ -31,7 +31,7 @@
 	"forwardPorts": [
 		80,
 		3306,
-		8081
+		81
 	],
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:1": {}
