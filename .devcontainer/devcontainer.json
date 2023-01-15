@@ -1,4 +1,3 @@
-// Update the VARIANT arg in docker-compose.yml to pick a PHP version
 {
 	"name": "PHP",
 	"dockerComposeFile": "docker-compose.yml",
@@ -9,11 +8,8 @@
 	"features": {
 	},
 
-	// Configure tool-specific properties.
 	"customizations": {
-		// Configure properties specific to VS Code.
 		"vscode": {		
-			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"xdebug.php-pack",
 				"yogensia.searchwpdocs",
@@ -35,9 +31,8 @@
 		3306
 	],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh > .devcontainer/postCreateCommand.log  && code - r wordpress/wp-content/plugins/wp-codespace/wp-codespace.php",
+	
 	"portsAttributes": {
 		"3306": {
 			"label": "Database (internal)"
@@ -53,5 +48,5 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 
-	//"postStartCommand": "docker-compose restart"
+	//"postStartCommand": ""
 }
