@@ -29,7 +29,7 @@
 
 	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
 	"forwardPorts": [
-		8080,
+		80,
 		3306,
 		8081
 	],
@@ -44,7 +44,7 @@
 		"3306": {
 			"label": "Database (internal)"
 		},
-		"8080": {
+		"80": {
 			"label": "WordPress"
 		},
 		"8081": {
