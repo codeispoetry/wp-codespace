@@ -1,5 +1,9 @@
 #! /bin/bash
 
+sed -i -e "s/DocumentRoot \/var\/www\/html/DocumentRoot \/workspaces\/wp-codespace\/wordpress/" /etc/apache2/sites-available/000-default.conf
+update-rc.d apache2 defaults 
+service apache2 start
+
 exit; 
 echo "Installing depedencies"
 npm install 
