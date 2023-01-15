@@ -39,7 +39,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
-	"postCreateCommand": "./scripts/postCreateCommand.sh > scripts/postCreateCommand.log",
+	"postCreateCommand": "./.devcontainer/postCreateCommand.sh > .devcontainer/postCreateCommand.log",
 	"portsAttributes": {
 		"3306": {
 			"label": "Database (internal)"
