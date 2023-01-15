@@ -11,24 +11,27 @@ Create your own codespace by clicking this button. Please allow 5 minutes for au
 ## Playing around
 Try the example plugin in _plugins/wp-codespace_, make some changes and appreciate the advantages of a pre-configured codespace.
 
-### Code linting
+### Linting
 Edit the file _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_:
 - Delete a whitespace between parentheses and curly brackets and see the code linting in action. 
 - Use a right click to format the file according to [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
 
-### WordPress autocompletion and inline documentation
+### WordPress autocompletion
 Edit the file _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_:
 - type somewhere _"add_" and see the autocompletion suggestions specially for WordPress.
+
+### WordPress inline documentation
+Opem the file _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_:
 - hover over _add_action_ and see the documentation for that WordPress method
 
 ### WP CLI
 Open the terminal (make sure, you are in the subfolder _wordpress_) and try the [WP CLI](https://wp-cli.org/).
 - `wp plugin list`
-- `wp user list`
 
 ### Playwright Tests
 Open the terminal and switch to the directory _wordpress/wp-content/plugins/wp-codespace_.
 - run `npm test` for an example [playwright test](https://playwright.dev/).
+
 See the test specification in the subfolder _tests_.
 
 ### SASS/CSS Compiling
