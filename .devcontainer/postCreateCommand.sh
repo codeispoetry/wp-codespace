@@ -30,8 +30,6 @@ echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
 echo "cd $CODESPACE_VSCODE_FOLDER/wordpress" >> ~/.bashrc
 source ~/.bashrc
 
-exit
-
 # install dependencies
 npm install 
 composer install
@@ -39,5 +37,6 @@ yes | npx playwright install-deps
 npx playwright install 
 
 # Setup local plugin
-exit
 cd wordpress/wp-content/plugins/wp-codespace && npm install
+
+code -r wordpress/wp-content/plugins/wp-codespace/wp-codespace.php
