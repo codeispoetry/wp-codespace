@@ -16,7 +16,7 @@ Author: Tom Rose
 /**
  * Adds a Hello Codespace to the admin area.
  */
-function wp_codespace_notices() {
+function wp_codespace_notices(){
 	echo '<p class="wp-codespace">Hello codespace!</p>';
 }
 add_action( 'admin_notices', 'wp_codespace_notices' );
