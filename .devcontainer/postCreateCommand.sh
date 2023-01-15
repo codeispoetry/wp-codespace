@@ -19,6 +19,7 @@ wp core install --url=https://$(CODESPACE_NAME) --title=WordPress --admin_user=a
 wp language core install de_DE --activate
 wp plugin delete akismet
 wp plugin install show-current-template --activate
+cd ..
 
 #Xdebug
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
@@ -29,11 +30,11 @@ composer install
 yes | npx playwright install-deps  
 npx playwright install 
 
-# Setup local plugin
-cd wordpress/wp-content/plugins/wp-codespace && npm install
-cd ../../../../
-
 # Setup bash
 echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
 echo export PS1=\"$ \" >> ~/.bashrc
 source ~/.bashrc
+
+# Setup local plugin
+exit
+cd wordpress/wp-content/plugins/wp-codespace && npm install
