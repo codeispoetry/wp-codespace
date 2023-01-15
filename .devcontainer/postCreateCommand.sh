@@ -1,8 +1,13 @@
 #! /bin/bash
 
-sed -i -e "s/DocumentRoot \/var\/www\/html/DocumentRoot \/workspaces\/wp-codespace\/wordpress/" /etc/apache2/sites-available/000-default.conf
+# Apache
+sed -i '/DocumentRoot/c\\tDocumentRoot $CODESPACE_VSCODE_FOLDER/wordpress' /etc/apache2/sites-available/000-default.conf
+a2ensite 000-default.conf
 update-rc.d apache2 defaults 
 service apache2 start
+
+#WordPress
+wp core download --locale=de_DE --path=wordpress
 
 exit; 
 echo "Installing depedencies"

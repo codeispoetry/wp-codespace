@@ -14,7 +14,7 @@ Try the example plugin in _plugins/wp-codespace_, make some changes and apprecia
 After the codespace is up and running, the _postCreateCommand_ will be executed, including:
 - install node and php dependencies
 - install WordPress with credentials admin/admin
-- install and activating selected plugins
+- install and activate selected plugins
 - provide [WP CLI](https://wp-cli.org/)
 - add [playwright test](https://playwright.dev/) environment
 - configure in VS Code:

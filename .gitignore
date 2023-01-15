@@ -5,13 +5,13 @@ vendor
 npm-debug.log
 .devcontainer/postCreateCommand.log
 
-htdocs/*
-!htdocs/wp-content
-htdocs/wp-content/*
-!htdocs/wp-content/plugins
-htdocs/wp-content/plugins/*
-!htdocs/wp-content/plugins/wp-codespace
+wordpress/*
+!wordpress/wp-content
+wordpress/wp-content/*
+!wordpress/wp-content/plugins
+wordpress/wp-content/plugins/*
+!wordpress/wp-content/plugins/wp-codespace
 
-!htdocs/wp-content/themes
-htdocs/wp-content/themes/*
-!htdocs/wp-content/themes/rosegarden
+!wordpress/wp-content/themes
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/rosegarden
