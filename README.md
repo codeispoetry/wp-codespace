@@ -11,17 +11,18 @@ Create your own codespace by clicking this button. Please allow 5 minutes for au
 Try the example plugin in _plugins/wp-codespace_, make some changes and appreciate the advantages of a pre-configured codespace.
 
 ## Behind the scenes
-After the codespace is up and running, the _postCreateCommand_ will be executed, including:
-- install node and php dependencies
+This setup will do the following things automatically:
 - install WordPress with credentials admin/admin
 - install and activate selected plugins
 - provide [WP CLI](https://wp-cli.org/)
+- install node and php dependencies
 - add [playwright test](https://playwright.dev/) environment
 - configure in VS Code:
   - WP Coding Standards
   - Autocompletion for WordPress functions
   - searchable WordPress-Docs
-  - for more details, see _.devcontainer/.devcontainer.json_
+ 
+ For more details, see _.devcontainer.json_, _/Dockerfile_ and _postCreateCommand.sh_, all of which you will find in the _.devcontainer_-folder.
 
 ## About Codepsaces
 GitHub Codespaces are your dev environment in the cloud. Start coding instantly on your WordPress theme or plugin. A codespace is an IDE in the browser with pre-configured XDebug, WordPress Coding Standards and a pre-installed WordPress with your personal plugin or theme, that you are developing.
