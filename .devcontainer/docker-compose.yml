@@ -5,13 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-
     volumes:
       - ../..:/workspaces:cached
-
-    networks:
-      - wpsite
-
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
@@ -25,9 +20,7 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
-    networks:
-      - wpsite
-  
+
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     depends_on:
@@ -37,7 +30,5 @@ services:
     environment:
       PMA_HOST: db
 
-networks:
-  wpsite:
 volumes:
   mariadb-data:
