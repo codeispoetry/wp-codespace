@@ -1,5 +1,5 @@
 #! /bin/bash
-REPO_FOLDER="/workspaces/$RepositoryName/"
+REPO_FOLDER="/workspaces/$RepositoryName"
 
 # Apache
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
@@ -37,10 +37,10 @@ npm install
 composer install
 
 # Setup local plugin
-cd $REPO_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npm run compile:css
+cd $REPO_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npx playwright install && npm run compile:css
 code -r wp-codespace.php
 
 # Setup bash
-echo export PATH=\"\$PATH:/$REPO_FOLDER/vendor/bin\" >> ~/.bashrc
+echo export PATH=\"\$PATH:$REPO_FOLDER/vendor/bin\" >> ~/.bashrc
 echo "cd $REPO_FOLDER/wordpress" >> ~/.bashrc
 source ~/.bashrc
