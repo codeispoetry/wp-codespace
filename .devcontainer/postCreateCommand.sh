@@ -27,22 +27,20 @@ curl https://raw.githubusercontent.com/WPTT/theme-unit-test/master/themeunittest
 wp import demo-content.xml--authors=create
 rm demo-content.xml
 
-cd ..
 
 #Xdebug
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
-# Setup bash
-echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
-#echo export PS1=\"$ \" >> ~/.bashrc
-echo "cd $CODESPACE_VSCODE_FOLDER/wordpress" >> ~/.bashrc
-source ~/.bashrc
-
 # install dependencies
+cd $CODESPACE_VSCODE_FOLDER
 npm install 
 composer install
 
 # Setup local plugin
-cd wordpress/wp-content/plugins/wp-codespace && npm install && npm run compile:css
-
+cd $CODESPACE_VSCODE_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npm run compile:css
 code -r wp-codespace.php
+
+# Setup bash
+echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
+echo "cd $CODESPACE_VSCODE_FOLDER/wordpress" >> ~/.bashrc
+source ~/.bashrc
