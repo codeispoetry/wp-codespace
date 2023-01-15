@@ -33,8 +33,6 @@ source ~/.bashrc
 # install dependencies
 npm install 
 composer install
-yes | npx playwright install-deps  
-npx playwright install 
 
 # Setup local plugin
 cd wordpress/wp-content/plugins/wp-codespace && npm install
