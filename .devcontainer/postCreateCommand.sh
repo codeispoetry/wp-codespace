@@ -26,7 +26,8 @@ echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
 # Setup bash
 echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
-echo export PS1=\"$ \" >> ~/.bashrc
+#echo export PS1=\"$ \" >> ~/.bashrc
+echo "cd $CODESPACE_VSCODE_FOLDER/wordpress" >> ~/.bashrc
 source ~/.bashrc
 
 exit
