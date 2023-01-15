@@ -19,6 +19,7 @@ wp core install --url=https://$(CODESPACE_NAME) --title=WordPress --admin_user=a
 wp language core install de_DE --activate
 wp plugin delete akismet
 wp plugin install show-current-template --activate
+wp plugin activate wp-codespace
 cd ..
 
 #Xdebug
@@ -35,6 +36,6 @@ npm install
 composer install
 
 # Setup local plugin
-cd wordpress/wp-content/plugins/wp-codespace && npm install
+cd wordpress/wp-content/plugins/wp-codespace && npm install && npm run compile:css
 
-code -r wordpress/wp-content/plugins/wp-codespace/wp-codespace.php
+code -r wp-codespace.php
