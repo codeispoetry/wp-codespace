@@ -1,7 +1,7 @@
 version: '3.8'
 
 services: 
-  php:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -21,6 +21,15 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
+      
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 81:80
+    environment:
+      PMA_HOST: db
 
 volumes:
   mariadb-data:
