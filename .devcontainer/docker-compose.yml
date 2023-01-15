@@ -2,7 +2,7 @@ version: '3.8'
 
 services: 
   app:
-    image: tomrosert/wp-codespace:latst
+    image: tomrosert/wp-codespace:latest
 #    build:
 #      context: .
 #      dockerfile: Dockerfile
