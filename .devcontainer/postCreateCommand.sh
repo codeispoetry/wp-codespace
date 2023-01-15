@@ -1,8 +1,9 @@
 #! /bin/bash
 pwd 
+whoami
 # Apache
-chmod 777 /etc/apache2/sites-available/000-default.conf
-sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf 2>.devcontainer/sedlog.log
+sudo chmod 777 /etc/apache2/sites-available/000-default.conf
+sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf 2>.devcontainer/sedlog.log
 
 update-rc.d apache2 defaults 
 service apache2 start
@@ -11,7 +12,7 @@ service apache2 start
 wp core download --locale=de_DE --path=wordpress
 cd wordpress
 wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=db
-
+make update-wp-config 
 
 
 exit; 
@@ -41,7 +42,7 @@ do
 done
 
 sudo chmod 777 htdocs/ -R 
-make update-wp-config 
+
 
 # retry until database is up and running
 while true; do
