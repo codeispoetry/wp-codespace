@@ -24,10 +24,9 @@ wp plugin activate wp-codespace
 
 # Demo content for WordPress
 wp plugin install wordpress-importer --activate
-curl https://raw.githubusercontent.com/WPTT/theme-unit-test/master/themeunittestdata.wordpress.xml > demo-content.xml
-wp import demo-content.xml--authors=create
+curl https://raw.githubusercontent.com/WPTT/theme-unit-test/master/themeunittestdata.wordpress.xml > demo-content.xml 2>foo.log
+wp import demo-content.xml --authors=create
 rm demo-content.xml
-
 
 #Xdebug
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
