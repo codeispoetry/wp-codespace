@@ -23,22 +23,17 @@ wp plugin install show-current-template --activate
 #Xdebug
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
-
-exit; 
-
-
-
-echo "Installing depedencies"
+# install dependencies
 npm install 
 composer install
 yes | npx playwright install-deps  
 npx playwright install 
+
+# Setup local plugin
 cd wordpress/wp-content/plugins/wp-codespace && npm install
 cd ../../../../
 
-
-
-
+# Setup bash
 echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
 echo export PS1=\"$ \" >> ~/.bashrc
 source ~/.bashrc
