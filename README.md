@@ -3,12 +3,12 @@
 This is a starter kit for a development environment for WordPress in a GitGub [Codepsace](https://github.com/features/codespaces).
 Start developing for WordPress right after a single click.
 
-## Usage
+## Installation
 Create your own codespace by clicking this button. Please allow 5 minutes for auto-configuration at first setup. 
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)
 
-## Playing around
+## Usage
 Try the example plugin in _plugins/wp-codespace_, make some changes and appreciate the advantages of a pre-configured codespace.
 
 ### Linting
