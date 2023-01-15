@@ -1,15 +1,23 @@
 #! /bin/bash
 
 # Apache
-sed -i '/DocumentRoot/c\\tDocumentRoot $CODESPACE_VSCODE_FOLDER/wordpress' /etc/apache2/sites-available/000-default.conf
+chmod 777 /etc/apache2/sites-available/000-default.conf
+sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
 a2ensite 000-default.conf
 update-rc.d apache2 defaults 
 service apache2 start
 
-#WordPress
+# WordPress
 wp core download --locale=de_DE --path=wordpress
+cd wordpress
+wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=db
+
+
 
 exit; 
+
+
+
 echo "Installing depedencies"
 npm install 
 composer install
