@@ -2,8 +2,8 @@
 pwd 
 # Apache
 chmod 777 /etc/apache2/sites-available/000-default.conf
-sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
-a2ensite 000-default.conf
+sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf 2>.devcontainer/sedlog.log
+
 update-rc.d apache2 defaults 
 service apache2 start
 
