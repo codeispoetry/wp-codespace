@@ -32,4 +32,4 @@ A codespace is a convenient way to contribute to an Open Source project, as you 
 
 Just type, test and refactor your WordPress code. No need for DevOps.
 
-Giv it a try and [create your personal codespace on main](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope) right now.
+Give it a try and [create your personal codespace on main](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope) right now.

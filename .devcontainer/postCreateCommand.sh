@@ -1,5 +1,5 @@
 #! /bin/bash
-
+pwd 
 # Apache
 chmod 777 /etc/apache2/sites-available/000-default.conf
 sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf

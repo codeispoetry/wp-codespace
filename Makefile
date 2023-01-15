@@ -7,9 +7,9 @@ shell:
 stop:
 	docker-compose stop
 
-LINE_NUMBER=$(shell grep -n -o 'stop editing!' htdocs/wp-config.php | cut -d ':' -f 1)
+LINE_NUMBER=$(shell grep -n -o 'stop editing!' wordpress/wp-config.php | cut -d ':' -f 1)
 update-wp-config:
-	sed -i '$(LINE_NUMBER)r scripts/wp-config-addendum.txt' htdocs/wp-config.php && sed -i -e "s/CODESPACE_NAME/$(CODESPACE_NAME)/g"  htdocs/wp-config.php
+	sed -i '$(LINE_NUMBER)r .devcontainer/wp-config-addendum.txt' wordpress/wp-config.php && sed -i -e "s/CODESPACE_NAME/$(CODESPACE_NAME)/g"  wordpress/wp-config.php
 
 wp-install:
 	docker-compose exec --user www-data wordpress wp core install --url=https://$(CODESPACE_NAME) --title=WordPress --admin_user=admin --admin_password=admin --admin_email=mail@example.com --locale=de_DE
