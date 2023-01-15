@@ -1,4 +1,5 @@
 #! /bin/bash
+REPO_FOLDER="/workspaces/$RepositoryName/"
 
 # Apache
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
@@ -32,15 +33,15 @@ rm demo-content.xml
 echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
 # install dependencies
-cd $CODESPACE_VSCODE_FOLDER
+cd $REPO_FOLDER
 npm install 
 composer install
 
 # Setup local plugin
-cd $CODESPACE_VSCODE_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npm run compile:css
+cd $REPO_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npm run compile:css
 code -r wp-codespace.php
 
 # Setup bash
-echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
-echo "cd $CODESPACE_VSCODE_FOLDER/wordpress" >> ~/.bashrc
+echo export PATH=\"\$PATH:/$REPO_FOLDER/vendor/bin\" >> ~/.bashrc
+echo "cd $REPO_FOLDER/wordpress" >> ~/.bashrc
 source ~/.bashrc
