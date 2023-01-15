@@ -1,9 +1,8 @@
 #! /bin/bash
-pwd 
-whoami
+
 # Apache
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
-sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf 2>.devcontainer/sedlog.log
+sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
 
 update-rc.d apache2 defaults 
 service apache2 start
@@ -12,7 +11,17 @@ service apache2 start
 wp core download --locale=de_DE --path=wordpress
 cd wordpress
 wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=db
-make update-wp-config 
+
+LINE_NUMBER=`grep -n -o 'stop editing!' wordpress/wp-config.php | cut -d ':' -f 1`
+sed -i "${LINE_NUMBER}r .devcontainer/wp-config-addendum.txt" wordpress/wp-config.php && sed -i -e "s/CODESPACE_NAME/$CODESPACE_NAME/g"  wordpress/wp-config.php
+
+wp core install --url=https://$(CODESPACE_NAME) --title=WordPress --admin_user=admin --admin_password=admin --admin_email=mail@example.com --locale=de_DE
+wp language core install de_DE --activate
+wp plugin delete akismet
+wp plugin install show-current-template --activate
+
+#Xdebug
+echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
 
 exit; 
@@ -24,37 +33,11 @@ npm install
 composer install
 yes | npx playwright install-deps  
 npx playwright install 
-cd htdocs/wp-content/plugins/wp-codespace && npm install
+cd wordpress/wp-content/plugins/wp-codespace && npm install
 cd ../../../../
 
 
-echo "Configuring xdebug"
-echo xdebug.log_level=0 | sudo tee -a /usr/local/etc/php/conf.d/xdebug.ini
 
-echo "Starting docker"
-docker-compose up -d
-
-file="htdocs/wp-config.php"
-while test ! -f "$file"
-do
-  echo "Look for wp-config"
-  sleep 10
-done
-
-sudo chmod 777 htdocs/ -R 
-
-
-# retry until database is up and running
-while true; do
-  echo "try to make wp-install"
-  make wp-install
-  if [ $? -eq 0 ]; then
-      break
-  fi
-  sleep 15
-done
-
-make wp-configure
 
 echo export PATH=\"\$PATH:/$CODESPACE_VSCODE_FOLDER/vendor/bin\" >> ~/.bashrc
 echo export PS1=\"$ \" >> ~/.bashrc
