@@ -39,8 +39,15 @@ Open the terminal and switch to the directory _wordpress/wp-content/plugins/wp-c
 - change the color in the file _build/sass/styles.scss_
 - run `npm run compile:css` to compile _styles.css_
 
-### Custom demo content
+### Demo content
 This repo fills WordPress with demo content from the [WordPress Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test). In your fork, you can place a *.xml-file and import this data on the command line. See _.devcontainer/postCreateCommand.sh_ under the section _"Demo content for WordPress"_ for more details.
+
+### Debugging
+[Xdebug](https://xdebug.org/) is installed and [configured vor VS Code](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug). See _.vscode/launch.json_ for details.
+- set an arbitrary breakpoint in _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_
+- starting debugging with _Listen for Xdebug in WordPress_. The footer-line in VS Code will turn orange
+- head your browser to the admin-panel 
+- see debugging information in VS Code
 
 ## Behind the scenes
 This setup will install and configure the following things automatically:
@@ -50,12 +57,15 @@ This setup will install and configure the following things automatically:
 - install [WP CLI](https://wp-cli.org/)
 - install node (npm) and php (composer) dependencies
 - add [playwright test](https://playwright.dev/) environment
+- install and [configure Xdebug]((https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug))
 - configure VS Code:
   - WordPress Coding Standards
   - autocompletion for WordPress functions
   - searchable WordPress-Docs
+  - Xdebug launch.json
+  - dark theme, autosave and much more. See _.vscode/settings.json_
  
- For more details, see _.devcontainer.json_, _Dockerfile_ and _postCreateCommand.sh_, all of which you will find in the _.devcontainer_-folder.
+ For more details, take a look into the folders _.devcontainer_ and _.vscode_.
 
 ## About Codepsaces
 GitHub Codespaces are your dev environment in the cloud. Start coding instantly on your WordPress theme or plugin. A codespace is an IDE in the browser with pre-configured XDebug, WordPress Coding Standards and a pre-installed WordPress with your personal plugin or theme, that you are developing.
