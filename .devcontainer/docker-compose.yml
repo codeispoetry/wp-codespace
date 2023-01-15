@@ -22,14 +22,5 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
 
-  phpmyadmin:
-    image: phpmyadmin
-    depends_on:
-      - db
-    ports:
-      - 81:80
-    environment:
-      PMA_HOST: db
-
 volumes:
   mariadb-data:
