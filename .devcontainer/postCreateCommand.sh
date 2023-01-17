@@ -41,6 +41,6 @@ cd $REPO_FOLDER/wordpress/wp-content/plugins/wp-codespace && npm install && npx 
 code -r wp-codespace.php
 
 # Setup bash
-echo export PATH=\"\$PATH:$REPO_FOLDER/vendor/bin\" >> ~/.bashrc
+echo export PATH=\"\$PATH:$REPO_FOLDER/vendor/bin:$REPO_FOLDER/node_modules/.bin/\" >> ~/.bashrc
 echo "cd $REPO_FOLDER/wordpress" >> ~/.bashrc
 source ~/.bashrc
