@@ -8,6 +8,8 @@ Create your own codespace by clicking this button. Please allow 5 minutes for au
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope)
 
+You are done. The installation is completed.
+
 ## Usage
 Try the example plugin in _plugins/wp-codespace_, make some changes and appreciate the advantages of a pre-configured codespace.
 
@@ -18,10 +20,10 @@ Edit the file _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_:
 
 ### WordPress autocompletion
 Edit the file _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_:
-- type somewhere _"add_" and see the autocompletion suggestions specially for WordPress.
+- type somewhere _"add_" and see the autocompletion suggestions especially for WordPress.
 
 ### WordPress inline documentation
-Opem the file _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_:
+Open the file _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_:
 - hover over _add_action_ and see the documentation for that WordPress method
 
 ### WP CLI
@@ -40,12 +42,12 @@ Open the terminal and switch to the directory _wordpress/wp-content/plugins/wp-c
 - run `npm run compile:css` to compile _styles.css_
 
 ### Demo content
-This repo fills WordPress with demo content from the [WordPress Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test). In your fork, you can place a *.xml-file and import this data on the command line. See _.devcontainer/postCreateCommand.sh_ under the section _"Demo content for WordPress"_ for more details.
+This repo fills WordPress with demo content from the [WordPress Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test). In your fork, you can place an *.xml-file and import this data via the WP CLI. See _.devcontainer/postCreateCommand.sh_ and search for _"Demo content for WordPress"_ for more details.
 
 ### Debugging
-[Xdebug](https://xdebug.org/) is installed and [configured vor VS Code](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug). See _.vscode/launch.json_ for details.
+[Xdebug](https://xdebug.org/) is installed and [configured for VS Code](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug). See _.vscode/launch.json_ for details.
 - set an arbitrary breakpoint in _wordpress/wp-content/plugins/wp-codespace/wp-codespace.php_
-- starting debugging with _Listen for Xdebug in WordPress_. The footer-line in VS Code will turn orange
+- start debugging with _Listen for Xdebug in WordPress_. The footer-line in VS Code will turn orange
 - head your browser to the admin-panel 
 - see debugging information in VS Code
 
@@ -74,6 +76,6 @@ Set up your personal codespace on this repo (or on your private fork) with just 
 
 A codespace is a convenient way to contribute to an Open Source project, as you find all prerequisites preconfigured. You do not have to install any software, a codespace runs in the browser, as well as in your local VS Code or PhpStorm.
 
-Just type, test and refactor your WordPress code. No need for DevOps.
+Just write, test and refactor your WordPress code. No need for devOps.
 
-Give it a try and [create your personal codespace on main](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope) right now.
+Give it a try and [create your personal codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=586814971&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestEurope) right now.
