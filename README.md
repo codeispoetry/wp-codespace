@@ -1,6 +1,6 @@
 # WordPress Codespace Dev Environment
 
-This is a starter kit for a development environment for WordPress in a GitGub [Codepsace](https://github.com/features/codespaces).
+This is a starter kit for a development environment for WordPress in a GitHub [Codespace](https://github.com/features/codespaces).
 Start developing for WordPress right after a single click.
 
 ## Installation
