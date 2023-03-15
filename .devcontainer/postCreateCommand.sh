@@ -9,7 +9,7 @@ service apache2 start
 
 LOCALE="de_DE"
 
-# WordPress Cire install
+# WordPress Core install
 wp core download --locale=$LOCALE --path=wordpress
 cd wordpress
 wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=db
