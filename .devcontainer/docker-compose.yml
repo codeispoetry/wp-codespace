@@ -2,8 +2,8 @@ version: '3.8'
 
 services: 
   app:
-    image: tomrosert/wp-codespace:latest
-#    build:
+#    image: tomrosert/wp-codespace:latest
+    build: .
 #      context: .
 #      dockerfile: Dockerfile
     restart: unless-stopped
