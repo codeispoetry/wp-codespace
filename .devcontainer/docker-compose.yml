@@ -2,8 +2,8 @@ version: '3.8'
 
 services: 
   app:
-    image: araeubig/digital-picture-frame:latest
-#   image: tomrosert/wp-codespace:latest
+#   image: araeubig/digital-picture-frame:latest
+   image: tomrosert/wp-codespace:latest
 #    build:
 #      context: .
 #      dockerfile: Dockerfile
