@@ -35,7 +35,7 @@
 	
 	"portsAttributes": {
 		"3306": {
-			"label": "Database (internal)"
+			"label": "MariaDB"
 		},
 		"80": {
 			"label": "WordPress"
