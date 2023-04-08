@@ -56,5 +56,5 @@ code -r wp-codespace.php
 
 # Setup bash
 echo export PATH=\"\$PATH:$REPO_FOLDER/vendor/bin:$REPO_FOLDER/node_modules/.bin/\" >> ~/.bashrc
-echo "cd $REPO_FOLDER/wordpress" >> ~/.bashrc
+echo "cd $REPO_FOLDER/wordpress/wp-content" >> ~/.bashrc
 source ~/.bashrc
