@@ -1,5 +1,5 @@
 {
-	"name": "PHP",
+	"name": "Wordpress",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -31,17 +31,18 @@
 		3306
 	],
 
-	"postCreateCommand": "./.devcontainer/postCreateCommand.sh > .devcontainer/postCreateCommand.log  && code - r wordpress/wp-content/plugins/wp-codespace/wp-codespace.php",
+	"postCreateCommand": "./.devcontainer/setup.sh > .devcontainer/setup.log",
+		// && code - r wordpress/wp-content/plugins/wp-codespace/wp-codespace.php",
 	
 	"portsAttributes": {
 		"3306": {
-			"label": "Database (internal)"
+			"label": "MariaDB"
 		},
 		"80": {
 			"label": "WordPress"
 		},
 		"81": {
-			"label": "phpMyAmdin"
+			"label": "phpMyAdmin"
 		}
 	},
 	"postStartCommand": "service apache2 start"
