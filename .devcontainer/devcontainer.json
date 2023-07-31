@@ -3,13 +3,13 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
+	
 	// Features to add to the dev container. More info: https://containers.dev/implementors/features.
 	"features": {
 	},
 
 	"customizations": {
-		"vscode": {		
+		"vscode": {
 			"extensions": [
 				"xdebug.php-pack",
 				"yogensia.searchwpdocs",
@@ -32,7 +32,7 @@
 	],
 
 	"postCreateCommand": "./.devcontainer/postCreateCommand.sh > .devcontainer/postCreateCommand.log  && code - r wordpress/wp-content/plugins/wp-codespace/wp-codespace.php",
-	
+
 	"portsAttributes": {
 		"3306": {
 			"label": "Database (internal)"
@@ -41,7 +41,7 @@
 			"label": "WordPress"
 		},
 		"81": {
-			"label": "phpMyAmdin"
+			"label": "phpMyAdmin"
 		}
 	},
 	"postStartCommand": "service apache2 start"
